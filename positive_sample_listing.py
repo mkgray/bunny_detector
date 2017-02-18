@@ -24,12 +24,14 @@ if __name__ == "__main__":
     #argparse.add_argument("-c", "--cascade", default="haarcascade_frontalcatface.xml", help="path to cat detector haar cascade")
     args = argparse.parse_args()
     
-    for file in os.listdir(args.source_directory[0]):
-        if file.endswith(".jpg"):
+    with open(args.source_directory[0] + "/info.dat", 'w') as f:
+    
+        for file in os.listdir(args.source_directory[0]):
+            if file.endswith(".jpg"):
             
-            width, height, depth = scipy.ndimage.imread(args.source_directory[0] + '/' + file).shape
+                width, height, depth = scipy.ndimage.imread(args.source_directory[0] + '/' + file).shape
             
-            print(args.source_directory[0] + '/' + file + " 1 0 0 " + str(width) + " " + str(height))                               
+                f.write(args.source_directory[0] + '/' + file + " 1 0 0 " + str(width) + " " + str(height) + '\n')                               
 
 #    with open(args.source_directory) as f:
 #        

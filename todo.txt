@@ -1,0 +1,5 @@
+1) Auto-populate list of negative examples for OpenCV training
+2) Create and populate positive examples for OpenCV training
+3) train OpenCV (push to master when working)
+4) test bun detector
+5) Get bun detector integrated with live webcam feed
